@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yfBox</title>
+    <link rel="stylesheet" href="css/yfCss.css">
+</head>
+<body>
+    <div class="d1">
+        <button id="btn1">我是Prompt弹出框</button>
+        <button id="b2">我是Tip框</button>
+        <button id="b3">我是加载框</button>
+        <button id="b4" style="z-index: 3000;position: fixed;">关闭加载框</button>
+    </div>
+<script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/yfJs.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                yfBox.prompt({
+                    btns:{ok:"点不点",no:"点点点"},
+                    mark:"这里是小字提示",
+                    ok:function(){yfBox.tip("info","很好，你点了")},
+                    no:function(){yfBox.tip("warning","让你点你就点啊")}
+                });
+            });
+
+            $('#b2').click(function () {
+                yfBox.tip('warning','图片上传隧道股份十多个成功啊！',100000);
+            });
+
+            $('#b3').click(function () {
+                yfBox.load();
+            });
+
+            $('#b4').click(function () {
+                yfBox.closeLoad();
+            })
+        });
+    </script>
+</body>
+</html>
