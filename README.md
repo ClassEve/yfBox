@@ -8,3 +8,17 @@ yfBox.prompt({
   txt:"这里是默认提示内容"
 })
 ```
+
+### 2.有两个按钮有提示有标题有mark的提示框
+![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/defaultDemo.png)
+```
+yfBox.prompt({
+  title: "温馨提示",
+  txt: "这里是默认提示内容",
+  mark: "这里是底部小字", 
+  btns: {ok: "确定"，no: "取消" },
+  ok: function(){ },  //这里是点击确定时触发的函数
+  no: function(){ }  //这里是点击取消时触发的函数，以上两个事件都包含默认事件，弹出框淡出
+})
+```
+
