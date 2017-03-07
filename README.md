@@ -1,4 +1,4 @@
-# prompt弹出框
+# 一、prompt弹出框
 ### 1.最简单的prompt提示框
 ![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/defaultDemo.png)
 ```
@@ -29,7 +29,7 @@ yfBox.prompt({
 })
 ```
 
-# tip框
+# 二、tip框
 注意：除了info没图标，其他都有对应图标；tip框里一定没有按钮，最后一个参数可以设置自动消失的时间
 ### 1.默认info框
 ![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/infoDemo.png)
@@ -55,7 +55,7 @@ yfBox.tip("error","这里是提示内容",3000)
 yfBox.tip("warning","这里是提示内容",3000) 
 ```
 
-# loading加载框
+# 三、loading加载框
 ### 1.调出加载框
 yfBox.load();
 ### 2.关闭加载框
