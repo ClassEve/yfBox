@@ -1,6 +1,4 @@
-# 提示弹出框
-这是一个我 **自己封装并在公司网页上使用的弹出框**，第一次写封装代码，可能有一些bug和代码不够简洁的地方，在以后的日子里，我会继续修改和精简
-
+# prompt弹出框
 ### 1.最简单的prompt提示框
 ![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/defaultDemo.png)
 ```
@@ -10,7 +8,7 @@ yfBox.prompt({
 ```
 
 ### 2.有两个按钮有提示有标题有mark的提示框
-![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/defaultDemo.png)
+![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/markDemo.png)
 ```
 yfBox.prompt({
   title: "温馨提示",                 //选填，默认为温馨提示
@@ -20,5 +18,40 @@ yfBox.prompt({
   ok: function(){ },                //点击确定时触发的函数
   no: function(){ }                 //点击取消时触发的函数，以上两个事件都包含默认事件=》弹出框淡出
 })
+```
+
+### 3.一个按钮的prompt提示框
+![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/onebtn.png)
+```
+yfBox.prompt({
+  txt:"这里是默认提示内容",
+  btn:{ok:"确定"}
+})
+```
+
+# tip框
+注意：除了info没图标，其他都有对应图标；tip框里一定没有按钮，最后一个参数可以设置自动消失的时间
+### 1.默认info框
+![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/infoDemo.png)
+```
+yfBox.tip("info","这里是提示内容",3000)  //3000 指的是3秒后消失
+```
+
+### 2.成功提示框
+![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/successDemo.png)
+```
+yfBox.tip("success","这里是提示内容",3000) 
+```
+
+### 3.失败提示框
+![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/errorDemo.png)
+```
+yfBox.tip("error","这里是提示内容",3000) 
+```
+
+### 4.警告提示框
+![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/warningDemo.png)
+```
+yfBox.tip("warning","这里是提示内容",3000) 
 ```
 
