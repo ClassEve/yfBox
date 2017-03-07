@@ -5,7 +5,7 @@
 ![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/defaultDemo.png)
 ```
 yfBox.prompt({
-  txt:"这里是默认提示内容"
+  txt:"这里是默认提示内容"   
 })
 ```
 
@@ -13,12 +13,12 @@ yfBox.prompt({
 ![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/defaultDemo.png)
 ```
 yfBox.prompt({
-  title: "温馨提示",
-  txt: "这里是默认提示内容",
-  mark: "这里是底部小字", 
-  btns: {ok: "确定"，no: "取消" },
-  ok: function(){ },  //这里是点击确定时触发的函数
-  no: function(){ }  //这里是点击取消时触发的函数，以上两个事件都包含默认事件，弹出框淡出
+  title: "温馨提示",                 //选填，默认为温馨提示
+  txt: "这里是默认提示内容",          //必填
+  mark: "这里是底部小字",            //选填，默认为空
+  btns: {ok: "确定"，no: "取消" },   //选填，默认为两个按钮，确认和取消，也可以只写一个确认选项
+  ok: function(){ },                //点击确定时触发的函数
+  no: function(){ }                 //点击取消时触发的函数，以上两个事件都包含默认事件=》弹出框淡出
 })
 ```
 
