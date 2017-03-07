@@ -55,3 +55,8 @@ yfBox.tip("error","这里是提示内容",3000)
 yfBox.tip("warning","这里是提示内容",3000) 
 ```
 
+# loading加载框
+### 1.调出加载框
+yfBox.load();
+### 2.关闭加载框
+yfBox.closeLoad();
