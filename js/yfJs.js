@@ -188,7 +188,59 @@ var yfBox ={
                 loadBox.remove();
             },600);
         }
-    }
+    },
+    //单纯的购物车动画框
+        shopCar: function(e){
+        	var contextPath = '/yf-front';
+            var $shop=$('.J-shoping');
+            var $target=$(e.target);
+            x = $target.offset().left + 30;
+            y = $target.offset().top + 10;
+            X = $shop.offset().left+10;
+            Y = $shop.offset().top;
+            if ($('#floatOrder').length <= 0) {
+                $('body').append('<div id="floatOrder"><img src="'+contextPath+'/template/images/2.png" width="15" height="13" /></div>');}
+            var $obj=$('#floatOrder');
+            if(!$obj.is(':animated')){
+                $obj.css({'left': x,'top': y}).animate({'left': X,'top': Y-30},500,function() {
+                    $obj.stop(false, false).animate({'top': Y+20,'opacity':0},500,function(){
+                        $obj.fadeOut(300,function(){$obj.remove();});
+                    });
+                });
+            }
+        },
+        //传入元素进行判断的购物车动画
+        shopCarInput: function(){
+        	var preVal = '';		//之前的值
+        	var afterVal = '';		//操作之后的值
+        	for(var i = 0;i < arguments.length; i++ ){
+        		$(arguments[i]).focus(function(){
+            		preVal = $(this).val();		//获得焦点获得改变当前值
+            	}).blur(function(e){
+            		afterVal = $(this).val();	//失去焦点获得改变后值
+            		if(preVal != afterVal && afterVal){	//如果不相等且值存在
+            			var contextPath = '/yf-front';	//执行购物车动画
+                        var $shop=$('.J-shoping');
+                        var $target=$(e.target);
+                        var x = $target.offset().left + 30;
+                        var y = $target.offset().top + 10;
+                        var X = $shop.offset().left+10;
+                        var Y = $shop.offset().top;
+                        if ($('#floatOrder').length <= 0) {
+                            $('body').append('<div id="floatOrder"><img src="'+contextPath+'/template/images/2.png" width="15" height="13" /></div>');}
+                        var $obj=$('#floatOrder');
+                        if(!$obj.is(':animated')){
+                            $obj.css({'left': x,'top': y}).animate({'left': X,'top': Y-30},500,function() {
+                                $obj.stop(false, false).animate({'top': Y+20,'opacity':0},500,function(){
+                                    $obj.fadeOut(300,function(){$obj.remove();});
+                                });
+                            });
+                        }
+            		}
+            	});
+        	}
+        }
+    
 };
 
 
