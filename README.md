@@ -69,15 +69,16 @@ yfBox.closeLoad();
 ### 1.单纯的调用购物车飞出的动画
 ![defaultDemo](https://github.com/ClassName/yfBox/blob/master/images/shopCar.png)
 ```
-yfBox.shopCar(e)   //注意，这里的 参数 e  来自上层函数中事件  e  如下
-btn.click(function(e){ //这里的e必须要出现，以供shopCar函数引用
+yfBox.shopCar(e);        //注意，参数e来自上层函数，如下
+
+btn.click(function(e){  //这里的e必须要出现，以供shopCar函数引用
   yfBox.shopCar(e)
 })
 ```
 
 ### 2.直接给指定元素绑定购物车动画
-更推荐这种用法，直接给指定元素绑定动画，只需要传入任意多个选择器并自带判断，如果前后值一样或者为空值，不会出现则动画
+更推荐这种用法，直接给指定元素绑定动画，只需要传入任意多个选择器并自带判断，如果前后值一样或者为空值，不会出现动画
 ```
-yfBox.shopCarInput('选择器一','选择器二','选择器三'...);
-yfBox.shopCarInput('.inputone','#inputtwo'...);
+yfBox.shopCarInput('选择器一','选择器二','选择器三'...)
+yfBox.shopCarInput('.inputone','#inputtwo'...)
 ```
