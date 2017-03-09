@@ -42,24 +42,27 @@ var yfBox ={
             btnOk = btns.ok || "确定",                     //是否包含确定文字
             btnNo = btns.no || "取消",                     //是否包含取消文字
             ok = options.ok,                              //确定时执行的方法
-            no = options.no;                              //取消时，执行的方法
+            no = options.no,                              //取消时，执行的方法
+            closeBtn = options.closeBtn;		  		  //控制是否出现叉叉
         //todo 创建弹出框的整体结构
         var boxCover = $('<div class="yfPromptMask"></div>'),           //背景层
             boxContent = $('<div class="yfPromptContent"></div>'),      //pop盒子
             boxTitle = $("<p class='yfTitle'>"+title+"</p>"),           //标题框
-            boxClose = $('<i class="yfClose">&times;</i>'),             //关闭X
             boxTxt = $("<div class='yfTxt'></div>"),                    //提示内容框
             boxFoot = $("<p class='yfFoot'></p>");                      //弹框底部
 
-        //todo 给X添加关闭事件并追加到标题栏中
-        boxClose.click(function () {
-            $(this).closest('.yfPromptContent').fadeOut(300);
-            $('.yfPromptMask').fadeOut(500);
-            setTimeout(function () {
-                $('.yfPromptContent,.yfPromptMask').remove();
-            },600);
-        });
-        boxTitle.append(boxClose);
+        if(closeBtn != 'none'){
+            var boxClose = $('<i class="yfClose">&times;</i>');         //判断是否有叉叉选项来进行生成
+            //todo 给X添加关闭事件并追加到标题栏中
+            boxClose.click(function () {
+                $(this).closest('.yfPromptContent').fadeOut(300);
+                $('.yfPromptMask').fadeOut(500);
+                setTimeout(function () {
+                    $('.yfPromptContent,.yfPromptMask').remove();
+                },600);
+            });
+            boxTitle.append(boxClose);
+        }
 
         if(contxt){  //如果有大文本内容 创建元素
             boxTxt.append( $('<p>'+contxt+'</p>'));
